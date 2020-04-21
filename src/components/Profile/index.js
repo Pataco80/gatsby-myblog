@@ -8,6 +8,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 // Import Components for App
 import Avatar from '../Avatar'
 
+// Styles from styled-components
+import * as S from './styled'
 
 // Component
 const Profile = () => {
@@ -30,12 +32,15 @@ const Profile = () => {
 
   // Render Component
   return(
-    <div className='profile-wrapper'>
+    <S.ProfileWrapper>
       <Avatar/>
-      <h1>{title}</h1> 
-      <h2>{myJob}</h2>
-      <p>{description}</p>
-    </div> 
+      <S.ProfileLink>
+        <S.ProfileAuthor>{title}
+          <S.ProfileMyJob>{myJob}</S.ProfileMyJob>
+        </S.ProfileAuthor> 
+      </S.ProfileLink>
+      <S.ProfileDescription>{description}</S.ProfileDescription>
+    </S.ProfileWrapper> 
   )
 }
 
