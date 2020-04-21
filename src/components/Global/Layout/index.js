@@ -12,19 +12,21 @@ import PropTypes from 'prop-types'
 import Profile from '../../Profile'
 
 // Import Styles
-import styled from 'styled-component'
+import GlobalStyle from '../../../styles/globalStyles'
+import * as S from './styled'
 
 // Component
-const Layout = ({ children }) => {
+const Layout = ({ className, children }) => {
 
   // Render Component
   return (
-    <>
+    <S.LayoutWrapper>
+    <GlobalStyle />
       <aside>
         <Profile />
       </aside>
-      <main>{children}</main>
-    </>
+      <S.MainWrapper>{children}</S.MainWrapper>
+    </S.LayoutWrapper>
   )
 }
 
@@ -32,8 +34,5 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-// Styles from styled-components
-
 
 export default Layout
