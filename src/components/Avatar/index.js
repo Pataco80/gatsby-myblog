@@ -1,13 +1,12 @@
 import React from 'react'
 
-
 // Import components from Gatsby and plugins Gatsby
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-
 
 // Import Components for App
 
+// Styles from styled-components
+import * as S from './styled'
 
 // Component
 const Avatar = () => {
@@ -27,14 +26,12 @@ const Avatar = () => {
 
   // Render Component
   return (
-    <Img fixed={avatarImage.childImageSharp.fixed} title='Profile Photo'/>
+    <S.AvatarImage fixed={avatarImage.childImageSharp.fixed} title='Profile Photo'/>
   )
 }
 
 // React PropTypes and more...
 
-
-// Styles from styled-components
 
 
 export default Avatar

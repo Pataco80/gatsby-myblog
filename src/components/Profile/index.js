@@ -46,8 +46,4 @@ const Profile = () => {
 
 // React PropTypes and more...
 
-
-// Styles from styled-components
-
-
 export default Profile
