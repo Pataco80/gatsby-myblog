@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import Components for App
-import Profile from "../Profile"
+import Profile from '../../Profile'
 
 // Import Styles
-import styled from "styled-component"
+import styled from 'styled-component'
 
 // Component
 const Layout = ({ children }) => {
