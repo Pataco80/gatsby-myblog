@@ -2,7 +2,7 @@ import React from 'react'
 
 
 // Import components from Gatsby and plugins Gatsby
-import {useStaticQuery,graphql} from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 
@@ -13,7 +13,7 @@ import Img from 'gatsby-image'
 const Avatar = () => {
 
   // GraphQl Queries
-  const {avatarImage} = useStaticQuery(graphql`
+  const { avatarImage } = useStaticQuery(graphql`
     {
       avatarImage:file(relativePath: {eq: "photo-cv.jpg"}) {
         childImageSharp {

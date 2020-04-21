@@ -2,7 +2,7 @@ import React from 'react'
 
 
 // Import components from Gatsby and plugins Gatsby
-import {useStaticQuery,graphql} from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 
 // Import Components for App
@@ -30,7 +30,7 @@ const Profile = () => {
 
   // Render Component
   return(
-    <div className="profile-wrapper">
+    <div className='profile-wrapper'>
       <Avatar/>
       <h1>{title}</h1> 
       <h2>{myJob}</h2>
