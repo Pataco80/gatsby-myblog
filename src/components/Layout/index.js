@@ -7,22 +7,33 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import Profile from './Profile'
 
+// Import Components for App
+import Profile from "../Profile"
+
+// Import Styles
+import styled from "styled-component"
+
+// Component
 const Layout = ({ children }) => {
 
+  // Render Component
   return (
     <>
       <aside>
-        <Profile/>
+        <Profile />
       </aside>
       <main>{children}</main>
     </>
   )
 }
 
+// React PropTypes and more...
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+// Styles from styled-components
+
 
 export default Layout
