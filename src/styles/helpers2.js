@@ -1,17 +1,17 @@
-import { css } from "styled-components"
-import { rgba } from "polished"
+import { css } from 'styled-components'
+import { rgba } from 'polished'
 
 export const setColor = {
-  primaryColor: "#af9a7d",
-  mainWhite: "#fff",
-  mainBlack: "#222",
-  mainGrey: "#ececec",
-  lightGrey: "#f7f7f7",
+  primaryColor: '#af9a7d',
+  mainWhite: '#fff',
+  mainBlack: '#222',
+  mainGrey: '#ececec',
+  lightGrey: '#f7f7f7',
 }
 
 export const setFont = {
-  main: "font-family: 'Lato', sans-serif;",
-  slanted: "font-family: 'Courgette', cursive;",
+  main: 'font-family: "Lato", sans-serif;',
+  slanted: 'font-family: "Courgette", cursive;',
 }
 
 const sizes = {
@@ -29,15 +29,15 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
-export const setFlex = ({ x = "center", y = "center" } = {}) => {
+export const setFlex = ({ x = 'center', y = 'center' } = {}) => {
   return `display: flex;
   justify-content: ${x};
   align-items: ${y};`
 }
 
 export const setLinearBcg = ({
-  colStart = "rgba(0, 0, 0, 0)",
-  colEnd = "rgba(0, 0, 0, 0)",
+  colStart = 'rgba(0, 0, 0, 0)',
+  colEnd = 'rgba(0, 0, 0, 0)',
 } = {}) => {
   return `background: linear-gradient(${colStart}, ${colEnd});
     opacity: 1 !important;
@@ -45,9 +45,9 @@ export const setLinearBcg = ({
 }
 
 export const setImgBcg = ({
-  size = "cover",
-  position = "center",
-  repeat = "no-repeat",
+  size = 'cover',
+  position = 'center',
+  repeat = 'no-repeat',
 } = {}) => {
   return `background-size: ${size} !important;
   background-position: ${position} !important;background-repeat: ${repeat} !important;
@@ -64,22 +64,22 @@ export const setLetterSpacing = (number = 2) => {
 
 export const setBorder = ({
   size = 2,
-  type = "solid",
-  color = "black",
+  type = 'solid',
+  color = 'black',
 } = {}) => {
   return `border:${setRem(size)} ${type} ${color}`
 }
 
 export const setTransition = ({
-  type = "all",
+  type = 'all',
   duration = 0.3,
-  effect = "ease-in-out",
+  effect = 'ease-in-out',
 } = {}) => {
   return `transition: ${type} ${duration}s ${effect}`
 }
 
 export const setShadow = {
-  light: "box-shadow 3px 3px 5px 0px rgba(0,0,0,0.75)",
-  dark: "box-shadow 6px 6px 5px 0px rgba(0,0,0,0.75)",
-  darkest: "box-shadow 10px 10px 5px 0px rgba(0,0,0,0.75)",
+  light: 'box-shadow 3px 3px 5px 0px rgba(0,0,0,0.75)',
+  dark: 'box-shadow 6px 6px 5px 0px rgba(0,0,0,0.75)',
+  darkest: 'box-shadow 10px 10px 5px 0px rgba(0,0,0,0.75)',
 }

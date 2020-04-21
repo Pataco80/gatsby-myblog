@@ -1,47 +1,23 @@
-import { css } from "styled-components"
-//import { rgba } from "polished"
+import { css } from 'styled-components'
+//import { rgba } from 'polished'
 
-export const colors = {
-  primaryColor: "#ED1C24",
-  accentColor: "#AF0E14",
-  mainWhite: "#fff",
-  mainBlack: "#000",
-  mainGrey: "#354147",
-  lightGrey: "#969ea2",
+// Colors Palette
+export const setColors = {
+  primaryColor: '#ED1C24',
+  accentColor: '#AF0E14',
+  mainWhite: '#fff',
+  mainBlack: '#16202c',
+  mainGrey: '#354147',
+  lightGrey: '#969ea2',
 }
 
+// Fonts Palette
 export const setFont = {
-  main: "font-family: 'Lato', sans-serif;",
-  slanted: "font-family: 'Courgette', cursive;",
+  main: 'font-family: "Lato", sans-serif;',
+  slanted: 'font-family: "Courgette", cursive;',
 }
 
-export const pxToRem = (px = 16) => {
-  return `${px / 16}rem`
-}
-export const perCent = (pc = 100) => {
-  return `${100/pc*100}%`
-}
-
-export const layout = (unity) => {
-  if(unity === pxToRem(px)){
-    return`max-width:${layout(pxToRem(px))};
-    width:100%;
-    margin: 0 auto;
-    padding: 0 ${pxToRem(8)};`
-  } else if(unity === perCent(pc))
-    return `
-    max-width:${layout(perCent(pc))};
-    width:100%;
-    margin: 0 auto;
-    padding: 0 ${pxToRem(8)};`
-}
-
-export const setFlex = ({ x = "center", y = "center" } = {}) => {
-  return `display: flex;
-  justify-content: ${x};
-  align-items: ${y};`
-}
-
+// Media Queries Functions
 const sizes = {
   large: 1200,
   desktop: 1024,
@@ -59,9 +35,39 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
+// Unitie's Calc Functions
+export const setPxToRem = (px = 16) => {
+  return `${px / 16}rem`
+}
+export const perCent = (pc = 100) => {
+  return `${100/pc*100}%`
+}
+
+// Layout's Functions
+export const layout = (unity) => {
+  if(unity === pxToRem(px)){
+    return`max-width:${layout(pxToRem(px))};
+    width:100%;
+    margin: 0 auto;
+    padding: 0 ${pxToRem(8)};`
+  } else if(unity === perCent(pc))
+    return `
+    max-width:${layout(perCent(pc))};
+    width:100%;
+    margin: 0 auto;
+    padding: 0 ${pxToRem(8)};`
+}
+
+export const setFlex = ({ x = 'center', y = 'center' } = {}) => {
+  return `display: flex;
+  justify-content: ${x};
+  align-items: ${y};`
+}
+
+// Images and Background's Functions
 export const setLinearBcg = ({
-  colStart = "rgba(0, 0, 0, 0)",
-  colEnd = "rgba(0, 0, 0, 0)",
+  colStart = 'rgba(0, 0, 0, 0)',
+  colEnd = 'rgba(0, 0, 0, 0)',
 } = {}) => {
   return `background: linear-gradient(${colStart}, ${colEnd});
     opacity: 1 !important;
@@ -69,18 +75,19 @@ export const setLinearBcg = ({
 }
 
 export const setImgBcg = ({
-  size = "cover",
-  position = "center",
-  repeat = "no-repeat",
+  size = 'cover',
+  position = 'center',
+  repeat = 'no-repeat',
 } = {}) => {
   return `background-size: ${size} !important;
   background-position: ${position} !important;background-repeat: ${repeat} !important;
 `
 }
 
+// Effect's Functions or props Object's
 export const setLinearBcg = ({
-  colStart = "rgba(0, 0, 0, 0)",
-  colEnd = "rgba(0, 0, 0, 0)",
+  colStart = 'rgba(0, 0, 0, 0)',
+  colEnd = 'rgba(0, 0, 0, 0)',
 } = {}) => {
   return `background: linear-gradient(${colStart}, ${colEnd});
     opacity: 1 !important;
@@ -93,22 +100,22 @@ export const setLetterSpacing = (number = 2) => {
 
 export const setBorder = ({
   size = 2,
-  type = "solid",
-  color = "black",
+  type = 'solid',
+  color = 'black',
 } = {}) => {
   return `border:${setRem(size)} ${type} ${color}`
 }
 
 export const setTransition = ({
-  type = "all",
+  type = 'all',
   duration = 0.3,
-  effect = "ease-in-out",
+  effect = 'ease-in-out',
 } = {}) => {
   return `transition: ${type} ${duration}s ${effect}`
 }
 
 export const setShadow = {
-  light: "box-shadow 3px 3px 5px 0px rgba(0,0,0,0.75)",
-  dark: "box-shadow 6px 6px 5px 0px rgba(0,0,0,0.75)",
-  darkest: "box-shadow 10px 10px 5px 0px rgba(0,0,0,0.75)",
+  light: 'box-shadow 3px 3px 5px 0px rgba(0,0,0,0.75)',
+  dark: 'box-shadow 6px 6px 5px 0px rgba(0,0,0,0.75)',
+  darkest: 'box-shadow 10px 10px 5px 0px rgba(0,0,0,0.75)',
 }
