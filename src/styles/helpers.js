@@ -2,9 +2,9 @@ import { css } from 'styled-components'
 //import { rgba } from 'polished'
 
 // Colors Palette
-export const setColors = {
-  primaryColor: '#ED1C24',
-  accentColor: '#AF0E14',
+export const setColor = {
+  primaryColor: '#8899a6',
+  accentColor: '#1fa1f2',
   mainWhite: '#fff',
   mainBlack: '#16202c',
   mainGrey: '#354147',
@@ -39,29 +39,41 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
 export const setPxToRem = (px = 16) => {
   return `${px / 16}rem`
 }
-export const perCent = (pc = 100) => {
-  return `${100/pc*100}%`
+export const setPerCent = (pc = 100) => {
+  return `${(100 * pc) / 100}%`
 }
 
 // Layout's Functions
-export const layout = (unity) => {
-  if(unity === pxToRem(px)){
-    return`max-width:${layout(pxToRem(px))};
+export const layout = (px = 1170) => {
+  return `
+    max-width:${setPxToRem(px)};
     width:100%;
     margin: 0 auto;
-    padding: 0 ${pxToRem(8)};`
-  } else if(unity === perCent(pc))
-    return `
-    max-width:${layout(perCent(pc))};
-    width:100%;
-    margin: 0 auto;
-    padding: 0 ${pxToRem(8)};`
+    padding: 0 ${setPxToRem(8)};`
 }
 
-export const setFlex = ({ x = 'center', y = 'center' } = {}) => {
+/*
+export const layout = ({unity}) => {
+  if(unity === {setPxToRem()}){
+    return`max-width:${layout(setPxToRem())};
+    width:100%;
+    margin: 0 auto;
+    padding: 0 ${setPxToRem(8)};`
+  } else if(unity === setPerCent())
+    return `
+    max-width:${layout(setPerCent())};
+    width:100%;
+    margin: 0 auto;
+    padding: 0 ${setPxToRem(8)};`
+}
+*/
+
+export const setFlex = ({ x = 'flex-start', y = 'flex-start', flDir = 'row'} = {}) => {
   return `display: flex;
   justify-content: ${x};
-  align-items: ${y};`
+  align-items: ${y};
+  flex-direction: ${flDir};
+  `
 }
 
 // Images and Background's Functions
@@ -85,15 +97,6 @@ export const setImgBcg = ({
 }
 
 // Effect's Functions or props Object's
-export const setLinearBcg = ({
-  colStart = 'rgba(0, 0, 0, 0)',
-  colEnd = 'rgba(0, 0, 0, 0)',
-} = {}) => {
-  return `background: linear-gradient(${colStart}, ${colEnd});
-    opacity: 1 !important;
-`
-}
-
 export const setLetterSpacing = (number = 2) => {
   return `letter-spacing:${number}px`
 }
@@ -103,7 +106,7 @@ export const setBorder = ({
   type = 'solid',
   color = 'black',
 } = {}) => {
-  return `border:${setRem(size)} ${type} ${color}`
+  return `border:${setPxToRem(size)} ${type} ${color}`
 }
 
 export const setTransition = ({
