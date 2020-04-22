@@ -7,6 +7,7 @@ export const setColor = {
   accentColor: '#1fa1f2',
   mainWhite: '#fff',
   mainBlack: '#16202c',
+  lightBlack: '#192734',
   mainGrey: '#354147',
   lightGrey: '#969ea2',
 }
@@ -106,7 +107,7 @@ export const setBorder = ({
   type = 'solid',
   color = 'black',
 } = {}) => {
-  return `border:${setPxToRem(size)} ${type} ${color}`
+  return `${setPxToRem(size)} ${type} ${color}`
 }
 
 export const setTransition = ({
