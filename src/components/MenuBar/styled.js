@@ -31,4 +31,7 @@ width:${setPxToRem(28)};
 cursor:pointer;
 color:${setColor.primaryColor};
 padding:${setPxToRem(8)} 0;
+&:hover {
+    color:${setColor.accentColor};
+  }
 `
