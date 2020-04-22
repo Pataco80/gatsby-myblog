@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { setPxToRem, setColor } from '../../../styles/helpers'
+import { setPxToRem, setColor } from '../../styles/helpers'
 import { Link } from 'gatsby'
 
 export const MenuLinksrWrapper = styled.nav`
