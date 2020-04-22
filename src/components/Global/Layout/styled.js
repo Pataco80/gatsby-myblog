@@ -10,6 +10,6 @@ ${setFlex};
 export const MainWrapper = styled.main`
 color: ${setColor.mainWhite};
 min-height:100vh;
-padding:${setPxToRem(0)} ${setPxToRem(60)} ${setPxToRem(0)} ${setPxToRem(320)};
+padding:${setPxToRem(0)} ${setPxToRem(60)} ${setPxToRem(0)} ${setPxToRem(260)};
 width:${setPerCent()};
 `
