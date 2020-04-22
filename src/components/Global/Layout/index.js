@@ -9,7 +9,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Import Components for App
-import Profile from '../../Profile'
+import SideBar from '../../Global/SideBar'
 
 // Import Styles
 import GlobalStyle from '../../../styles/globalStyles'
@@ -22,9 +22,7 @@ const Layout = ({ className, children }) => {
   return (
     <S.LayoutWrapper>
     <GlobalStyle />
-      <aside>
-        <Profile />
-      </aside>
+      <SideBar/>
       <S.MainWrapper>{children}</S.MainWrapper>
     </S.LayoutWrapper>
   )
