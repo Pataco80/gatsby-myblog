@@ -8,7 +8,7 @@ import { Link } from 'gatsby'
 // Import Components for App
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
-
+import PostItem from '../components/Home/PostItem'
 
 // Import Styles
 
@@ -17,20 +17,11 @@ import SEO from '../components/Global/seo'
 const IndexPage = () => (
   <Layout>
     <SEO title='Home' />
-    <h1>My Blog</h1>
-    <Link to='/' activeStyle={{ color: 'red' }} title='Home Page'>
-      Index Page
-    </Link>
-    <Link to='/about/' title='About Page'>
-      About Page
-    </Link>
+    <PostItem slug='/about/' background='red' category='CSS' date='23 mars 2020' timeRead='5' title='Big course from the CSS' description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec nisl ipsum. Aliquam erat volutpat. Ut quis diam at metus laoreet eleifend. Pellentesque aliquet eget sem sit amet posuere. Donec quis aliquam turpis." />
   </Layout>
 )
 
 // React PropTypes and more...
-
-
-// Styles from styled-components
 
 
 export default IndexPage
