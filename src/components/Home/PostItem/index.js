@@ -13,7 +13,7 @@ const PostItem = ({ slug, category, background, date, timeRead, title, descripti
   // Render Component
   <S.PostItemWrapper>
     <S.PostItemItem to={slug}>
-      <S.PostItemTag>{category}</S.PostItemTag>
+      <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
         <S.PostItemDate>Posté le date : {date} - Temps de lecture : {timeRead}</S.PostItemDate>
         <S.PostItemTitle>{title}</S.PostItemTitle>
