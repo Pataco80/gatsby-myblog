@@ -2,7 +2,6 @@ import React from "react"
 
 
 // Import components from Gatsby and plugins Gatsby
-import { Link } from 'gatsby'
 
 
 // Import Components for App
