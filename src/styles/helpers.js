@@ -112,7 +112,7 @@ export const setBorder = ({
 
 export const setTransition = ({
   type = 'all',
-  duration = 0.3,
+  duration = 0.5,
   effect = 'ease-in-out',
 } = {}) => {
   return `transition: ${type} ${duration}s ${effect}`
