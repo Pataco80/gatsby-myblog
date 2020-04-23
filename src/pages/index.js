@@ -2,23 +2,58 @@ import React from "react"
 
 
 // Import components from Gatsby and plugins Gatsby
-
+import { useStaticQuery, graphql} from 'gatsby'
 
 // Import Components for App
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
 import PostItem from '../components/Home/PostItem'
 
-// Import Styles
-
+// Import Styles  
 
 // Component
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
-    <PostItem slug='/about/' background='red' category='CSS' date='23 mars 2020' timeRead='5' title='Big course from the CSS' description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec nisl ipsum. Aliquam erat volutpat. Ut quis diam at metus laoreet eleifend. Pellentesque aliquet eget sem sit amet posuere. Donec quis aliquam turpis." />
-  </Layout>
-)
+const IndexPage = () => {
+
+  // GraphQl Queries
+  const {posts} = useStaticQuery(graphql`
+    query postList {
+      posts:allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "dddd, DD MMM YYYY", locale: "fr")
+              title
+              description
+              category
+              background
+            }
+            timeToRead
+          }
+        }
+      }
+    }
+  `)
+
+  // Variables from queries
+  const postsList = posts.edges
+
+  // Render Component
+  return(
+    <Layout>
+      <SEO title='Home' />
+      {
+        postsList.map(({node:{frontmatter:{date, title, description, category, background},timeToRead,fields:{slug}}}) => {
+          return <PostItem slug={slug}  date={date} title={title} description={description} category={category} background={background} timeToRead={timeToRead}/>
+        })
+      }
+      
+    </Layout>
+  )
+}
+  
 
 // React PropTypes and more...
 
