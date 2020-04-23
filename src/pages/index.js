@@ -17,7 +17,7 @@ const IndexPage = () => {
   // GraphQl Queries
   const {posts} = useStaticQuery(graphql`
     query postList {
-      posts:allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+      posts:allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 5) {
         edges {
           node {
             fields {
