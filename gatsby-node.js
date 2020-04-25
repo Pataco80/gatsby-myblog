@@ -12,6 +12,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // Variables de chemin pour les templates
 const BlogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+const BlogListTemplate = path.resolve(`./src/templates/blog-list.js`)
 
 // Création du champs slug pour chaques posts
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -45,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
   // Requête graphQl pour obtenir le slug du post, comme le ferait un identifiant unique et créer ainsi la page à partir de la donnée slug reçue.
   return graphql(`
     {
-      allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             fields {
@@ -63,12 +64,14 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(postList => {
+  `).then(result => {
  // La requête étant asynchrone, la methode ".then()" s'applique. Nous nomons "postList" le résultat de la requête et la passons en paramêtre de la méthode et exécutons une fonction.
 
 
     // On récupère la liste et faisons une boucle du "eges", un tableau contenant tous les posts. Chaque post considéré comme un "item", appelé "node" ou noeud est passé en argument comme un objet
-    postList.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const postList = result.data.allMarkdownRemark.edges
+    
+    postList.forEach(({ node }) => {
       // A la création de la page, il y a 3 paramêtres,
       // "path:" reçois la valeur de l'url, la valeur du champ "slug" en locurance.
       // "component:" Il s'agit de la page qui servira de template
@@ -83,16 +86,21 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    const PostsPerPage = 6
-    const numPages = Math.ceil(postList.length / PostsPerPage)
+    // Création de variable pour limiter la quantité de posts par page
+    const postsForPage = 6
 
+    // Calcul pour déterminer le nombre de pages à créer en utilisant "Math" aditionnée de ".ceil" pour effectuer un arrondi au dessus lors du calcul (page 1,xxx deviens ainsi page 2)
+    const numPages = Math.ceil(postList.length / postsForPage)
+
+    // Design de la pagination sous forme de tableau contenant les pages et créant une boucle pour attribuer un index à chaqune qui sert d'identifiant
     Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
-        path: index === 0 ? `/` : `/page/${index + 1}`,
-        component: path.resolve(`./src/templates/blog-list.js`),
+        path: index === 0 ? `/` : `/page/${index + 1}`,// url à afficher suivant la page selectionnée
+        component: BlogListTemplate, // Template du composant
         context: {
-          limit: PostsPerPage,
-          skip: index * PostsPerPage,
+          // Ellements à situer dans le contexte pour exécuter les diverses opérations du composant pour la pagination
+          limit: postsForPage,
+          skip: index * postsForPage,
           numPages,
           currentPage: index + 1,
         },
