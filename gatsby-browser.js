@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+
+// Plugin gatsby-remark-lazy-load utilise la librairie lazysizes"
+import 'lazysizes'
