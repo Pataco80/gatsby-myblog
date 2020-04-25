@@ -5,9 +5,10 @@ import { graphql } from 'gatsby'
 
 // Import Components for App
 import Layout from '../components/Global/Layout'
+import SEO from '../components/Global/seo'
 
 // Styles from styled-components
-//import * as S from './styled'
+import * as S from './styles/blog-post-styled'
 
 
 // GraphQl Queries
@@ -23,21 +24,29 @@ import Layout from '../components/Global/Layout'
           category
           background
         }
+        timeToRead
         html
       }
     }
   `
 
 // Component
-const BlogPost = ({data}) => {
+const BlogPostTemplate = ({data}) => {
   // Nous passons en paramêtre de la page les données de la requête appelée par défaut "data". Pour plus de facilité, nous mettons dans une variable "post" les données de "markdownRemark" se trouvant dans l'objet "data"
   const post = data.markdownRemark
   
   // Render Component
   return (
     <Layout>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{__html:post.html}}></div>
+      <SEO title={post.frontmatter.title} />
+      <S.PostHeader>
+        <S.PostDate>{post.frontmatter.date} - {post.timeToRead} {`min. de lecture`}</S.PostDate>
+        <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
+        <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
+      </S.PostHeader>
+      <S.MainContent>
+        <div dangerouslySetInnerHTML={{__html:post.html}}></div>
+      </S.MainContent>
     </Layout>
   )
 }
@@ -46,4 +55,4 @@ const BlogPost = ({data}) => {
 
 
 
-export default BlogPost
+export default BlogPostTemplate

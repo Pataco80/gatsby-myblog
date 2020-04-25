@@ -8,6 +8,7 @@ export const setColor = {
   mainWhite: '#fff',
   mainBlack: '#16202c',
   lightBlack: '#192734',
+  darkGrey: '#38444d',
   mainGrey: '#354147',
   lightGrey: '#969ea2',
 }
