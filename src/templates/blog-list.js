@@ -6,6 +6,7 @@ import { graphql} from 'gatsby'
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
 import PostItem from '../components/Home/PostItem'
+import Pagination from '../components/Pagination'
 
 // Import Styles  
 
@@ -37,11 +38,19 @@ export const getPosts = graphql`
 
 // Component
 const BlogListTemplate = (props) => {
-
 // Nous passons en paramêtre de la page toutes les "props" afin d'obtenir les requêtes graphQl et le "context" fournis par "gatsby-node.js"
 
   // Création d'une variable contenant le tableau de la liste des posts de la requête.
   const postsList = props.data.allMarkdownRemark.edges
+  // importation du contexte de page de "gatsby-node.js"
+  const {currentPage, numPages} = props.pageContext
+
+  // Calcul des actions du component Pagination
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage -1 === 1 ? '/' : `/page/${currentPage -1}`
+  const nextPage = `/page/${currentPage +1}`
+  
   // Render Component
   return (
    <Layout>
@@ -51,7 +60,8 @@ const BlogListTemplate = (props) => {
           return <PostItem slug={slug}  date={date} title={title} description={description} category={category} background={background} timeToRead={timeToRead}/>
         })
       }
-      
+
+      <Pagination currentPage={currentPage} numPages={numPages} prevPage={prevPage} nextPage={nextPage} isFirst={isFirst} isLast={isLast} />
     </Layout>
   )
 }
