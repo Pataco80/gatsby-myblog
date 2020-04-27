@@ -10,15 +10,15 @@ import * as S from './styled'
 // Component
 const PostComments = ({url, title}) => {
   // Disqus Variables
-  const completeUrl = `http://dvwdesign.ch/mon-blog/${url}`
+  const completeUrl = `https://gatsby-myblog.netlify.app/${url}`
 
 
   // Render Component
   return(
     <S.CommentsWrapper>
-      <S.CommentsTitle>{title}</S.CommentsTitle>
+      <S.CommentsTitle>Commentaires</S.CommentsTitle>
       <ReactDisqusComments
-      shortname="Pataco80"
+      shortname="mon-blog-gatsby"
       identifier={completeUrl}
       title={title}
       url={completeUrl}/>
