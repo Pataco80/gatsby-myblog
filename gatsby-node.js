@@ -61,6 +61,22 @@ exports.createPages = ({ graphql, actions }) => {
             }
             timeToRead
           }
+          next {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
         }
       }
     }
@@ -71,7 +87,7 @@ exports.createPages = ({ graphql, actions }) => {
     // On récupère la liste et faisons une boucle du "eges", un tableau contenant tous les posts. Chaque post considéré comme un "item", appelé "node" ou noeud est passé en argument comme un objet
     const postList = result.data.allMarkdownRemark.edges
     
-    postList.forEach(({ node }) => {
+    postList.forEach(({ node, previous, next }) => {
       // A la création de la page, il y a 3 paramêtres,
       // "path:" reçois la valeur de l'url, la valeur du champ "slug" en locurance.
       // "component:" Il s'agit de la page qui servira de template
@@ -82,6 +98,8 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           // Ci dessous nous passons le slug du post comme valeur de la requête graphQl. Il peut y avoir plusieurs variables dans le contexte, ici, seul le slug est nécéssaire pour créer la page.
           slug: node.fields.slug,
+          previousPost: next,
+          nextPost: previous
         },
       })
     })

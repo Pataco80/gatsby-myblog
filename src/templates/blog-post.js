@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 // Import Components for App
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
-
+import PaginationPost from '../components/PaginationPost'
 // Styles from styled-components
 import * as S from './styles/blog-post-styled'
 
@@ -31,9 +31,11 @@ import * as S from './styles/blog-post-styled'
   `
 
 // Component
-const BlogPostTemplate = ({data}) => {
+const BlogPostTemplate = ({ data, pageContext }) => {
   // Nous passons en paramêtre de la page les données de la requête appelée par défaut "data". Pour plus de facilité, nous mettons dans une variable "post" les données de "markdownRemark" se trouvant dans l'objet "data"
   const post = data.markdownRemark
+  const next = pageContext.nextPost
+  const previous = pageContext.previousPost
   
   // Render Component
   return (
@@ -47,6 +49,8 @@ const BlogPostTemplate = ({data}) => {
       <S.MainContent>
         <div dangerouslySetInnerHTML={{__html:post.html}}></div>
       </S.MainContent>
+      {/* prevous et next passent par le context de gatsby-node.js sous previousPost et nextPost. Le context envoie les informations pour traiter la page et le fonctionnement des composant au sein des pages qu'il crée. */}
+      <PaginationPost previous={previous} next={next}/> 
     </Layout>
   )
 }
