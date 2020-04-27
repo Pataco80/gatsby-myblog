@@ -7,6 +7,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
 import PaginationPost from '../components/PaginationPost'
+import PostComments from '../components/PostComments'
+
 // Styles from styled-components
 import * as S from './styles/blog-post-styled'
 
@@ -17,6 +19,9 @@ import * as S from './styles/blog-post-styled'
   export const getPost = graphql`
     query ($slug:String!) {
       markdownRemark(fields: {slug: {eq: $slug}}) {
+        fields {
+          slug
+        }
         frontmatter {
           title
           description
@@ -51,6 +56,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       </S.MainContent>
       {/* prevous et next passent par le context de gatsby-node.js sous previousPost et nextPost. Le context envoie les informations pour traiter la page et le fonctionnement des composant au sein des pages qu'il crée. */}
       <PaginationPost previous={previous} next={next}/> 
+      <PostComments url={post.fields.slug} title={post.frontmatter.title} />
     </Layout>
   )
 }
