@@ -8,3 +8,4 @@
 
 // Plugin gatsby-remark-lazy-load utilise la librairie lazysizes"
 import 'lazysizes'
+require("prismjs/themes/prism-tomorrow.css")

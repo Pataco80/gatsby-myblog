@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
 
+    // Attention !! les "uploads" doivent être tout en haut des "gatsby-source-filesystem"
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -47,7 +48,10 @@ module.exports = {
               linkImagesToOriginal: false
             },
           },
-          `gatsby-remark-lazy-load`
+          `gatsby-remark-lazy-load`,
+
+          // Attention ce plugin doit être placer en dernier dans "gatsby-transformer-remark"
+          `gatsby-remark-prismjs`
         ],
       },
     },
