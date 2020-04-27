@@ -15,6 +15,8 @@ const PostComments = ({url, title}) => {
 
   // Render Component
   return(
+    // shortname est indiqué dans votre admin disqus. Généralement, identique au nom que vous donnés à votre application.
+    // L'url est celle du site plus la props provenant du slug du post fournie par la requuête graphQl
     <S.CommentsWrapper>
       <S.CommentsTitle>Commentaires</S.CommentsTitle>
       <ReactDisqusComments
