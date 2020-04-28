@@ -6,7 +6,7 @@ import React from 'react'
 // Import Components for App
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
-import Search from '../components/Search/SearchBar'
+import Search from '../components/Search'
 
 // Import Styles
 

@@ -1,6 +1,8 @@
 import styled from "styled-components"
-import { setFlex, setColor, setPxToRem, setBorder, setTransition } from '../../../styles/helpers'
+import { setFlex, setColor, setPxToRem, setBorder, setTransition } from '../../styles/helpers'
 
+// Component Styles
+// Styles spcifiques à Alglia. voir la documentation
 export const SearchWrapper = styled.section`
   background: ${setColor.mainBlack};
   ${setFlex({flDir:'column',y:'stretch'})};
@@ -46,16 +48,18 @@ export const SearchWrapper = styled.section`
     &:focus {
       border:${setBorder({size:2,type:'solid',color:setColor.accentColor})};
       box-shadow: inset 3px 3px 10px 0px ${setColor.accentColor};
-}
-
-
-
-
-
+    }
   }
 
   .ais-SearchBox-submit,
   .ais-SearchBox-reset {
     display: none;
+  }
+
+  /* Styles pour les résultats de recherche dans le composant Hit */
+  .ais-Hits-list {
+    margin-bottom:0;
+    padding:0;
+    list-style:none;
   }
 `
