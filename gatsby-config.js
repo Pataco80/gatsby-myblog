@@ -1,3 +1,18 @@
+/* Comme je n'ai pas plusieurs environnement node.js, ma configuration et simple, mais je vous montre ci-dessous la complête en commentaire.
+
+require('dotenv').config({
+  path: `.env.${process.env.votre _environement}`,
+})
+
+Vous pouvez avoir plusieurs environements tels que develop, proeuction ou test par exemple.
+*/
+
+// Dans le cas de non variables d'environnement, écrivez le code ci-dessous.
+require('dotenv').config()
+
+const queries = require('./src/utils/algolia_queries')
+
+// Configuration de Gatsby et des modules plugins de Gatsby
 module.exports = {
   siteMetadata: {
     title: `Ricardo Do Vale`,
@@ -57,6 +72,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-algolia-search`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000, // default: 1000
+        enablePartialUpdates: true, // default: false
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
