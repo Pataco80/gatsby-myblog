@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { setFlex, setColor, setPxToRem } from '../../styles/helpers'
+import { setFlex, setPxToRem } from '../../styles/helpers'
 
 // Import Components for App
 import { Link } from 'gatsby'
@@ -7,16 +7,16 @@ import { Link } from 'gatsby'
 // Component Styles
 export const PaginationWrapper = styled.div`
 ${setFlex({x:'space-around', y:'center'})};
-color:${setColor.primaryColor};
+color:var(--texts);
 `
 export const PaginationLink = styled(Link)`
 ${setFlex({y:'center'})};
 height:${setPxToRem(38)};
-color:${setColor.primaryColor};
+color:var(--texts);
 text-decoration:none;
 
 &:hover {
-  color:${setColor.accentColor};
+  color:var(--highlight);
 }
 `
 

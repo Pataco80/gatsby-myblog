@@ -6,12 +6,39 @@ export const setColor = {
   primaryColor: '#8899a6',
   accentColor: '#1fa1f2',
   mainWhite: '#fff',
-  mainBlack: '#16202c',
-  lightBlack: '#192734',
+  secondaryWhite: '#f0f0f3',
+  mainBlack: '#222',
+  secondaryBlack: '#111',
+  mainAntracit: '#192734',
+  darkAtracit: '#16202c',
   darkGrey: '#38444d',
-  mainGrey: '#354147',
-  lightGrey: '#969ea2',
+  mainGrey: '#555555',
+  lightGrey: '#dedede',
 }
+
+export const setTheme = {
+  dark : {
+    texts: setColor.primaryColor,
+    highlight: setColor.accentColor,
+    postColor: setColor.mainWhite,
+    background: setColor.darkAtracit,
+    mediumBackground: setColor.mainAntracit,
+    borders: setColor.darkGrey,
+    white: setColor.mainWhite,
+    black: setColor.mainBlack
+  },
+  light : {
+    texts: setColor.mainGrey,
+    highlight: setColor.accentColor,
+    postColor: setColor.secondaryBlack,
+    background: setColor.mainWhite,
+    mediumBackground: setColor.secondaryWhite,
+    borders: setColor.lightGrey,
+    white: setColor.mainWhite,
+    black: setColor.mainBlack
+  }
+}
+
 
 // Fonts Palette
 export const setFont = {
@@ -106,17 +133,17 @@ export const setLetterSpacing = (number = 2) => {
 export const setBorder = ({
   size = 2,
   type = 'solid',
-  color = 'black',
+  color = 'var(--borders)',
 } = {}) => {
   return `${setPxToRem(size)} ${type} ${color}`
 }
 
 export const setTransition = ({
-  type = 'all',
+  style = 'all',
   duration = 0.5,
   effect = 'ease-in-out',
 } = {}) => {
-  return `transition: ${type} ${duration}s ${effect}`
+  return `transition: ${style} ${duration}s ${effect}`
 }
 
 export const setShadow = {

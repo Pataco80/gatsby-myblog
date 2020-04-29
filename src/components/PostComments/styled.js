@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { layout, setColor, setPxToRem } from '../../styles/helpers'
+import { layout, setPxToRem } from '../../styles/helpers'
 
 // Import Components for App
 
@@ -15,13 +15,13 @@ export const CommentsWrapper = styled.section`
   }
   #disqus_thread {
     a {
-      color: ${setColor.accentColor} !important;
-    }
+      color: var(--highlight) !important;
+    }    
   }
 `
 
 export const CommentsTitle = styled.h2`
-  color:${setColor.mainWhite};
+  color:var(--postColor) ;
   font-size:${setPxToRem(34)};
   font-weight: 700;
   padding-bottom: ${setPxToRem(32)};

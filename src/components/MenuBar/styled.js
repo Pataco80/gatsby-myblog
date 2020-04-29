@@ -11,8 +11,8 @@ position:fixed;
 right:0;
 height:100vh;
 width:${setPxToRem(60)};
-background-color:${setColor.lightBlack};
-border-left:${setBorder({size:1, type:'solid', color:setColor.primaryColor})};
+background-color:var(--mediumBackground);
+border-left:${setBorder({size:1})};
 padding: ${setPxToRem(14)};
 `
 
@@ -29,9 +29,9 @@ export const MenuBarItem = styled.span`
 display:block;
 width:${setPxToRem(28)};
 cursor:pointer;
-color:${setColor.primaryColor};
+color:var(--texts);
 padding:${setPxToRem(8)} 0;
 &:hover {
-    color:${setColor.accentColor};
+    color: var(--highlight);
   }
 `

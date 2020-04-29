@@ -4,7 +4,7 @@ import { setFlex, setColor, setPxToRem, setBorder, setTransition } from '../../s
 // Component Styles
 // Styles spcifiques à Alglia. voir la documentation
 export const SearchWrapper = styled.section`
-  background: ${setColor.mainBlack};
+  background: var(--background);
   ${setFlex({flDir:'column',y:'stretch'})};
   width: 100%;
   ${setTransition({type:'opacity', duration:0.4})};
@@ -28,26 +28,26 @@ export const SearchWrapper = styled.section`
   }
 
   .ais-Stats {
-    color: ${setColor.primaryColor};
+    color: var(--texts);
   }
 
   .ais-SearchBox-input {
     ${setFlex()};
     background: none;
     border: none;
-    border-bottom: ${setBorder({size:1, type:'solid', color:setColor.darkGrey})};
-    color: ${setColor.primaryColor};
+    border-bottom: ${setBorder({size:1, type:'solid', color:'var(--highlight)'})};
+    color: var(--texts);
     font-size: ${setPxToRem(26)};
     padding: ${setPxToRem(12)};
     width: 100%;
     outline:none;
 
     &::placeholder {
-      color: ${setColor.primaryColor};
+      color: var(--texts);
     }
     &:focus {
-      border:${setBorder({size:2,type:'solid',color:setColor.accentColor})};
-      box-shadow: inset 3px 3px 10px 0px ${setColor.accentColor};
+      border:${setBorder({size:2,type:'solid',color:'var(--highlight)'})};
+      box-shadow: inset 3px 3px 10px 0px var(--highlight);;
     }
   }
 

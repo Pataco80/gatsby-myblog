@@ -7,16 +7,16 @@ import { Link } from 'gatsby'
 // Styles exports
 export const ProfileWrapper = styled.section`
   ${setFlex({x:'center',y:'center', flDir:'column'})};
-  color:${setColor.mainWhite};
+  color:var(--texts);
 `
 
 export const ProfileLink = styled(Link)`
-  color:${setColor.primaryColor};
+  color:var(--texts);
   text-decoration:none;
   ${setTransition()};
 
   &:hover {
-    color:${setColor.accentColor};
+    color:var(--highlight);
   }
 `
 

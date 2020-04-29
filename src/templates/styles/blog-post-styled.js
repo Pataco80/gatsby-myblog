@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { setColor, setPxToRem, setTransition, setLetterSpacing, setBorder, layout } from '../../styles/helpers'
+import { setPxToRem, setTransition, setLetterSpacing, setBorder, layout } from '../../styles/helpers'
 
 export const PostHeader = styled.header`
   ${layout(1120)}
-  color: ${setColor.mainWhite};
+  color: var(--postColor);
   margin: auto;
   padding:  ${setPxToRem(80)} ${setPxToRem(80)} 0;
 `
@@ -42,7 +42,7 @@ export const MainContent = styled.section`
   .tags,
   iframe,
   .button-post {
-    color: ${setColor.mainWhite};
+    color: var(--postColor);
     font-size: ${setPxToRem(20)};
     font-weight: 300;
     line-height: 1.7;
@@ -96,14 +96,14 @@ export const MainContent = styled.section`
   }
 
   blockquote {
-    color: ${setColor.mainWhite};
-    border-left: ${setBorder({size:5, type:'solid', color: setColor.accentColor})};
+    color: var(--postColor);
+    border-left: ${setBorder({size:5, type:'solid', color: 'var(--highlight)'})};
     padding: 0 ${setPxToRem(30)};
     margin: ${setPxToRem(50)} auto;
   }
 
   hr {
-    border: ${setBorder({size:1, type:'solid', color: setColor.darkGrey})};
+    border: ${setBorder({size:1})};
     margin: ${setPxToRem(48)} auto;
   }
 
@@ -175,13 +175,13 @@ export const MainContent = styled.section`
   }
 
   a {
-    border-bottom: ${setBorder({size:1, type:'dashed', color: setColor.accentColor})};
-    color: ${setColor.accentColor};
+    border-bottom: ${setBorder({size:1, type:'dashed', color:'var(--highlight)'})};
+    color: var(--highlight);
     text-decoration: none;
     ${setTransition({type:'opacity', duration: 0.5})};
 
     svg {
-      color: ${setColor.mainWhite};
+      color: var(--postColor);
     }
 
     &:hover {

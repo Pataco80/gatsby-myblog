@@ -13,12 +13,12 @@ export const SocialLinksItem = styled.li`
 `
 
 export const SocialLinksLink = styled.a`
-  color:${setColor.primaryColor};
+  color:var(--texts);
   text-decoration:none;
   ${setTransition()};
 
   &:hover {
-    color:${setColor.accentColor};
+    color:var(--highlight);
   }
 `
 

@@ -15,15 +15,15 @@ export const MenuLinksItem = styled.li`
   padding :${setPxToRem(8)} 0;
 
   .active {
-   color:${setColor.accentColor};
+   color:var(--highlight);
   }
 
 `
 export const MenuLinkLink = styled(Link)`
-  color:${setColor.primaryColor};
+  color:var(--texts);
   text-decoration:none;
 
   &:hover {
-    color:${setColor.accentColor};
+    color:var(--highlight);
   }
 `

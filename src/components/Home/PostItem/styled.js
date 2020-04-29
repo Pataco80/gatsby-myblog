@@ -5,18 +5,17 @@ import { Link } from 'gatsby'
 
 // Component Styles
 export const PostItemWrapper = styled.article`
-background-color:${setColor.mainBlack};
-border-bottom:${setBorder({size:2,style:'solid',color: setColor.primaryColor})};
+border-bottom:${setBorder({size:2,style:'solid'})};
 `
 
 export const PostItemItem = styled(Link)`
 ${setFlex({y:'center'})};
-color:${setColor.primaryColor};
+color:var(--texts);
 text-decoration:none;
 padding:${setPxToRem(24)} ${setPxToRem(32)};
 
 &:hover {
-  color:${setColor.accentColor};
+  color:var(--highlight);
 }
 `
 
@@ -28,7 +27,7 @@ font-size:${setPxToRem(20)};
 text-transform:uppercase;
 font-weight:300;
 color:${setColor.mainWhite};
-background-color: ${props => props.background? props.background : setColor.lightGrey};
+background-color: ${props => props.background? props.background : "var(--highlight)"};
 border-radius:50%;
 `
 

@@ -7,7 +7,7 @@ export const SideBarWrapper = styled.aside`
   height:100vh;
   width:${setPxToRem(260)};
   padding:${setPxToRem(32)};
-  background-color:${setColor.lightBlack};
-  border-right:${setBorder({size:1,type:'solid',color:setColor.primaryColor})};
+  background-color:var(--mediumBackground);
+  border-right:${setBorder({size:1})};
   text-align:center;
 `
