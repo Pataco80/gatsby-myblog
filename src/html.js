@@ -44,7 +44,7 @@ export default function HTML(props) {
           />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes} className="light" >
+      <body {...props.bodyAttributes} className="dark" >
         {props.preBodyComponents}
         <div
           key={`body`}

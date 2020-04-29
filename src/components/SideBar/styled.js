@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { setFlex, setBorder, setColor, setPxToRem } from '../../styles/helpers'
+import { setFlex, setBorder, setPxToRem } from '../../styles/helpers'
 
 export const SideBarWrapper = styled.aside`
   ${setFlex({flDir:'column',x:'flex-start',y:'center'})};

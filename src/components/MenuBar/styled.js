@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { setColor, setFlex, setBorder, setPxToRem } from '../../styles/helpers'
+import { setFlex, setBorder, setPxToRem } from '../../styles/helpers'
 
 // Import Components for App
 import { Link } from 'gatsby'

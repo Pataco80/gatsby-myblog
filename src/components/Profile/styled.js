@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { setTransition, setFlex, setColor, setPxToRem } from '../../styles/helpers'
+import { setTransition, setFlex, setPxToRem } from '../../styles/helpers'
 
 // Import Components for App
 import { Link } from 'gatsby'

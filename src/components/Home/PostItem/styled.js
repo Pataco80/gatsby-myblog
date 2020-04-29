@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { setColor, setPxToRem, setFlex, setBorder } from '../../../styles/helpers'
+import { setPxToRem, setFlex, setBorder } from '../../../styles/helpers'
 // Import Components for App
 import { Link } from 'gatsby'
 
 // Component Styles
 export const PostItemWrapper = styled.article`
-border-bottom:${setBorder({size:2,style:'solid'})};
+border-bottom:${setBorder({size:2})};
 `
 
 export const PostItemItem = styled(Link)`
@@ -26,7 +26,7 @@ min-height:${setPxToRem(90)};
 font-size:${setPxToRem(20)};
 text-transform:uppercase;
 font-weight:300;
-color:${setColor.mainWhite};
+color:var(--white);
 background-color: ${props => props.background? props.background : "var(--highlight)"};
 border-radius:50%;
 `
