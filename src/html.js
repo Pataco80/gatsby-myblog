@@ -11,6 +11,9 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {props.headComponents}
+      </head>
+      <body {...props.bodyAttributes} className="dark">
         <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -37,13 +40,40 @@ export default function HTML(props) {
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-              })();`
+              })();
+
+
+              window.__onDisplayChange = function() {};
+                function setDisplay(newDisplay) {
+                  window.__display = newDisplay;
+                  preferredDisplay = newDisplay;
+                  document.body.id = newDisplay;
+                  window.__onDisplayChange(newDisplay);
+                }
+                var preferredDisplay;
+                try {
+                  preferredDisplay = localStorage.getItem('display');
+                } catch (err) { }
+                window.__setPreferredDisplay = function(newDisplay) {
+                  setDisplay(newDisplay);
+                  try {
+                    localStorage.setItem('display', newDisplay);
+                  } catch (err) {}
+                }
+                var displayQuery = window.matchMedia('(prefers-display-type: list)');
+                displayQuery.addListener(function(e) {
+                  window.__setPreferredDisplay(e.matches ? 'list' : 'grid')
+                });
+                setDisplay(preferredDisplay || (displayQuery.matches ? 'list' : 'grid'));
+              })();
+            
+`
             }}
           />
-        {props.headComponents}
-      </head>
-      <body {...props.bodyAttributes} className="dark" >
         {props.preBodyComponents}
+        <noscript key="noscript" id="gatsby-noscript">
+          This app works best with JavaScript enabled.
+        </noscript>
         <div
           key={`body`}
           id="___gatsby"

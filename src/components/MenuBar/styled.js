@@ -31,7 +31,15 @@ width:${setPxToRem(28)};
 cursor:pointer;
 color:var(--texts);
 padding:${setPxToRem(8)} 0;
-&:hover {
+  &:hover {
     color: var(--highlight);
   }
+  &.light {
+    color: #d4d400;
+
+    &:hover {
+      color: #e2e240;
+    }
+  }
+  
 `
