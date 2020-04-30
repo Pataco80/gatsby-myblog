@@ -37,9 +37,7 @@ export default function HTML(props) {
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-              })();
-            
-`
+              })();`
             }}
           />
         {props.headComponents}
