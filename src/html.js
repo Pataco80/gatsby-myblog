@@ -40,10 +40,8 @@ export default function HTML(props) {
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-              })();
 
-
-              window.__onDisplayChange = function() {};
+                window.__onDisplayChange = function() {};
                 function setDisplay(newDisplay) {
                   window.__display = newDisplay;
                   preferredDisplay = newDisplay;
