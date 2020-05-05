@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { setPxToRem, setFlex, setBorder } from '../../../styles/helpers'
+import media from 'styled-media-query'
+
 // Import Components for App
 import { Link } from 'gatsby'
 
 // Component Styles
 export const PostItemWrapper = styled.article`
-border-bottom:${setBorder({size:2})};
+  border-bottom:${setBorder({size:2})};
+  ${media.greaterThan('medium')`
+
+  `}
 `
 
 export const PostItemItem = styled(Link)`

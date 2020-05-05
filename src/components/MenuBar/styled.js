@@ -1,45 +1,82 @@
 import styled from 'styled-components'
 import { setFlex, setBorder, setPxToRem } from '../../styles/helpers'
+import media from 'styled-media-query'
 
 // Import Components for App
 import { Link } from 'gatsby'
 
 // Component Styles
 export const MenuBarWrapper = styled.section`
-${setFlex({flDir:'column', x:'space-between', y:'center'})};
-position:fixed;
-right:0;
-height:100vh;
-width:${setPxToRem(60)};
-background-color:var(--mediumBackground);
-border-left:${setBorder({size:1})};
-padding: ${setPxToRem(14)};
+  ${setFlex({ x:'space-between', y:'center'})};
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:auto;
+  background-color:var(--mediumBackground);
+  border-top:${setBorder({size:1})};
+  padding: 0 ${setPxToRem(16)};
+  
+  ${media.greaterThan('medium')`
+    ${setFlex({flDir:'column', x:'space-between', y:'center'})};
+    position:fixed;
+    right:0;
+    height:100vh;
+    width:auto;
+    background-color:var(--mediumBackground);
+    border-left:${setBorder({size:1})};
+    padding: ${setPxToRem(16)} ${setPxToRem(4)};
+  `}
 `
 
 export const MenuBarGroup = styled.div`
-${setFlex({flDir:'column'})};
+  ${setFlex()};
+
+  ${media.greaterThan('medium')`
+    ${setFlex({flDir:'column'})};
+  `}
 `
 
 export const MenuBarLink = styled(Link)`
-display:block;
-width:${setPxToRem(28)};
+${setFlex()};
+width:${setPxToRem(38)};
+margin: 0 ${setPxToRem(4)} 0 0;
+span{
+  padding:${setPxToRem(2)};
+  ${media.greaterThan('medium')`
+  padding-right:${setPxToRem(3)} !important;
+  `}
+}
+
+${media.greaterThan('medium')`
+${setFlex({x:'center'})};
+  width:${setPxToRem(42)};
+  margin: ${setPxToRem(4)} 0 ${setPxToRem(12)} 0;
+ `}
+${media.greaterThan('large')`
+  width:${setPxToRem(44)};
+  margin: ${setPxToRem(4)} 0 ${setPxToRem(20)} 0;
+ `}
+
 `
 
 export const MenuBarItem = styled.span`
 display:block;
-width:${setPxToRem(28)};
+width:${setPxToRem(45)};
 cursor:pointer;
 color:var(--texts);
-padding:${setPxToRem(8)} 0;
+padding:${setPxToRem(4)};
+margin:0;
   &:hover {
     color: var(--highlight);
   }
-  &.light {
-    color: #d4d400;
 
-    &:hover {
-      color: #e2e240;
-    }
-  }
   
+  ${media.greaterThan('medium')`
+    padding:${setPxToRem(12)} ${setPxToRem(4)};
+    width:${setPxToRem(38)};
+
+  `}
+  ${media.greaterThan('large')`
+  width:${setPxToRem(48)};
+ `}
 `

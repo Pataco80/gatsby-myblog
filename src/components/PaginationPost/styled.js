@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { setFlex, setPxToRem, setBorder, setTransition } from '../../styles/helpers'
+import media from 'styled-media-query'
 
 // Import Components for App
 import { Link } from 'gatsby'
@@ -10,6 +11,11 @@ export const PaginationPostWrapper = styled.section`
   border-top: ${setBorder({ size:1})};
   background: var(--mediumBackground);
   ${setFlex()};
+
+  ${media.greaterThan('medium')`
+
+  `}
+
 `
 
 export const PaginationPostLink = styled(Link)`

@@ -3,9 +3,10 @@ import React, {useState, useEffect} from 'react'
 // Import Components for App
 import { Home } from '@styled-icons/boxicons-solid/Home'
 import { SearchAlt2 as Search } from '@styled-icons/boxicons-regular/SearchAlt2'
-import { Lightbulb as Light } from '@styled-icons/fa-regular/Lightbulb'
+import { SunOutline as Sun } from '@styled-icons/evaicons-outline/SunOutline'
+import { MoonOutline as Moon } from '@styled-icons/evaicons-outline/MoonOutline'
 import { Grid } from '@styled-icons/boxicons-solid/Grid'
-import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-solid/UpArrowAlt'
+import { ArrowUp as Arrow } from '@styled-icons/entypo/ArrowUp'
 import { List } from '@styled-icons/evaicons-solid/List'
 
 // Import Styles
@@ -49,9 +50,8 @@ const MenuBar = () => {
       <S.MenuBarGroup>
         <S.MenuBarItem title='Theme Light / Dark' onClick={() => {
             window.__setPreferredTheme(isDarkTheme ? 'light' : 'dark')
-          }}
-          className={theme}>
-          <Light/>
+          }}>
+            {isDarkTheme ? <Sun /> : <Moon />}
         </S.MenuBarItem>
         <S.MenuBarItem 
         title='Affichage Liste ou Grille' 

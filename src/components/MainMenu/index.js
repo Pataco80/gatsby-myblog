@@ -4,8 +4,8 @@ import MenuLinks from '../MenuLinks'
 
 import * as S from './styled'
 
-const MainMenu = ({className}) => (
-    <S.MainMenuWrapper className={className}>
+const MainMenu = () => (
+    <S.MainMenuWrapper>
       <SocialLinks />
       <MenuLinks />
     </S.MainMenuWrapper>

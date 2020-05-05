@@ -16,8 +16,8 @@ const Avatar = () => {
     {
       avatarImage:file(relativePath: {eq: "photo-cv.jpg"}) {
         childImageSharp {
-          fixed(width: 60, height: 60) {
-            ...GatsbyImageSharpFixed_tracedSVG
+          fluid(maxWidth: 60) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -26,7 +26,7 @@ const Avatar = () => {
 
   // Render Component
   return (
-    <S.AvatarImage fixed={avatarImage.childImageSharp.fixed} title='Profile Photo'/>
+    <S.AvatarImage fluid={avatarImage.childImageSharp.fluid} title='Profile Photo'/>
   )
 }
 

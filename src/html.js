@@ -37,9 +37,9 @@ export default function HTML(props) {
                 }
                 var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 darkQuery.addListener(function(e) {
-                  window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+                  window.__setPreferredTheme(e.matches ? 'light' : 'dark')
                 });
-                setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+                setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
 
                 window.__onDisplayChange = function() {};
                 function setDisplay(newDisplay) {
@@ -60,9 +60,9 @@ export default function HTML(props) {
                 }
                 var displayQuery = window.matchMedia('(prefers-display-type: list)');
                 displayQuery.addListener(function(e) {
-                  window.__setPreferredDisplay(e.matches ? 'list' : 'grid')
+                  window.__setPreferredDisplay(e.matches ? 'grid' : 'list')
                 });
-                setDisplay(preferredDisplay || (displayQuery.matches ? 'list' : 'grid'));
+                setDisplay(preferredDisplay || (displayQuery.matches ? 'grid' : 'list'));
               })();
             
 `

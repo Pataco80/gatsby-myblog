@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { layout, setPxToRem } from '../../styles/helpers'
+import media from 'styled-media-query'
 
 // Import Components for App
 
@@ -18,6 +19,11 @@ export const CommentsWrapper = styled.section`
       color: var(--highlight) !important;
     }    
   }
+
+  ${media.greaterThan('medium')`
+
+  `}
+
 `
 
 export const CommentsTitle = styled.h2`

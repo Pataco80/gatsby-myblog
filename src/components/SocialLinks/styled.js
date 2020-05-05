@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {setFlex, setPxToRem,setTransition} from '../../styles/helpers'
 
-export const SocialLinksWrapper = styled.nav`
+export const SocialLinksWrapper = styled.div`
 `
 
 export const SocialLinksList = styled.ul`
