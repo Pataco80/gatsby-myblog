@@ -22,20 +22,27 @@ const Profile = () => {
           title
           myJob
           description
-          author
+          author {
+            firstName
+            lastName
+            twitterUsername
+          }
         }
       }
     }
   `
   const siteData = useStaticQuery(getSiteData)
   const {title,myJob,description} = siteData.site.siteMetadata
+  const {firstName,lastName,twitterUsername} = siteData.site.siteMetadata.author
 
   // Render Component
   return(
     <S.ProfileWrapper>
       <Avatar/>
       <S.ProfileLink>
-        <S.ProfileAuthor>{title}
+        <S.ProfileAuthor>
+          <span>{firstName} </span> 
+          <span>{lastName} </span> 
           <S.ProfileMyJob>{myJob}</S.ProfileMyJob>
         </S.ProfileAuthor> 
       </S.ProfileLink>

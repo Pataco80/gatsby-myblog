@@ -18,7 +18,11 @@ module.exports = {
     title: `Ricardo Do Vale`,
     myJob:`Developpeur Jamstack`,
     description: `Créateur de sites web avec React et Gatsby.`,
-    author: `Pataco80`,
+    author: {
+      firstName: `Ricardo`,
+      lastName: `Do Vale`,
+      twitterUsername: `Pataco80`
+    },
   },
   plugins: [
     `gatsby-plugin-styled-components`,
