@@ -17,4 +17,7 @@ export const MainWrapper = styled.main`
   ${media.greaterThan('medium')`
     padding:${setPxToRem(0)} ${setPxToRem(51)} ${setPxToRem(0)} ${setPxToRem(190)};
   `}
+  ${media.greaterThan('large')`
+    padding:${setPxToRem(0)} ${setPxToRem(57)} ${setPxToRem(0)} ${setPxToRem(261)};
+  `}
 `
