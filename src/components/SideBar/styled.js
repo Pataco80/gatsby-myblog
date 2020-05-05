@@ -6,10 +6,11 @@ export const SideBarWrapper = styled.aside`
   ${setFlex({flDir:'column'})};
   position:fixed;
   border-bottom:${setBorder({size:1})};
-      padding:${setPxToRem(4)} ${setPxToRem(16)};
+  padding:${setPxToRem(4)} ${setPxToRem(16)};
   text-align:center;
   background-color: var(--mediumBackground);
   width:100vw;
+  z-index:10;
 
   ${media.greaterThan('medium')`
     ${setFlex({flDir:'column',x:'flex-start',y:'center'})};
