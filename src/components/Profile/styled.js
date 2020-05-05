@@ -48,7 +48,7 @@ export const ProfileAuthor = styled.h1`
 
   ${media.greaterThan('medium')`
   font-size:${setPxToRem(26)};
-  margin:${setPxToRem(8)} ${setPxToRem('auto')} ${setPxToRem(24)};
+  margin:${setPxToRem(8)} auto ${setPxToRem(24)};
   `}
 `
 
