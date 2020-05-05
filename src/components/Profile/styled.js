@@ -35,10 +35,14 @@ export const ProfileAuthor = styled.h1`
   text-align:center;
   font-size:${setPxToRem(20)};
   margin:${setPxToRem(8)} auto ${setPxToRem(24)};
-  line-height:1.5;
+  line-height:1.75;
 
     span {
       display:block;
+      ${media.greaterThan('large')`
+        display:inline-block;
+      `}
+
     }
   `}
 
