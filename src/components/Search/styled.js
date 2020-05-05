@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { setFlex, setPxToRem, setBorder, setTransition } from '../../styles/helpers'
+import media from 'styled-media-query'
 
 // Component Styles
 // Styles spcifiques à Alglia. voir la documentation
@@ -16,11 +17,19 @@ export const SearchWrapper = styled.section`
 
   .ais-SearchBox,
   .ais-Stats {
-    padding: ${setPxToRem(8)} ${setPxToRem(48)};
+    padding: ${setPxToRem(8)} ${setPxToRem(24)};
+
+    ${media.greaterThan('medium')`
+      padding: ${setPxToRem(8)} ${setPxToRem(48)};
+    `}
   }
 
   .ais-SearchBox {
-    padding-top: ${setPxToRem(96)};
+    padding-top: ${setPxToRem(32)};
+
+    ${media.greaterThan('medium')`
+      padding-top: ${setPxToRem(96)};
+    `}
   }
 
   .ais-SearchBox-form {
@@ -37,7 +46,7 @@ export const SearchWrapper = styled.section`
     border: none;
     border-bottom: ${setBorder({size:1, type:'solid', color:'var(--highlight)'})};
     color: var(--texts);
-    font-size: ${setPxToRem(26)};
+    font-size: ${setPxToRem(22)};
     padding: ${setPxToRem(12)};
     width: 100%;
     outline:none;
@@ -49,6 +58,10 @@ export const SearchWrapper = styled.section`
       border:${setBorder({size:2,type:'solid',color:'var(--highlight)'})};
       box-shadow: inset 3px 3px 10px 0px var(--highlight);;
     }
+
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(26)};
+    `}
   }
 
   .ais-SearchBox-submit,
