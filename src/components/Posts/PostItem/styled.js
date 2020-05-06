@@ -8,6 +8,12 @@ import { Link } from 'gatsby'
 // Component Styles
 export const PostItemWrapper = styled.article`
   border-bottom:${setBorder({size:2})};
+
+  body#grid & {
+    ${setFlex({flDir:'column',y:'stretch'})};
+    background:var(--background);
+    border:${setBorder({size:1})};
+  }
 `
 
 export const PostItemItem = styled(Link)`
@@ -23,12 +29,19 @@ export const PostItemItem = styled(Link)`
   ${media.greaterThan('medium')`
     padding:${setPxToRem(24)} ${setPxToRem(32)};
   `}
+
+  body#grid & {
+    flex:auto;
+    ${setFlex({flDir:'column',y:'center'})};
+  }
 `
 
+
 export const PostItemTag = styled.div`
+  flex:none;
   ${setFlex({x:'center', y:'center'})};
-  min-width:${setPxToRem(70)};
-  min-height:${setPxToRem(70)};
+  width:${setPxToRem(70)};
+  height:${setPxToRem(70)};
   font-size:${setPxToRem(16)};
   text-transform:uppercase;
   font-weight:300;
@@ -37,10 +50,17 @@ export const PostItemTag = styled.div`
   border-radius:50%;
 
   ${media.greaterThan('medium')`
-    min-width:${setPxToRem(90)};
-    min-height:${setPxToRem(90)};
+    width:${setPxToRem(90)};
+    height:${setPxToRem(90)};
     font-size:${setPxToRem(20)};
   `}
+
+  body#grid & {
+    width:${setPxToRem(90)};
+    height:${setPxToRem(90)};
+    font-size:${setPxToRem(20)};
+    margin-bottom:${setPxToRem(16)};
+  }
 `
 
 export const PostItemInfo = styled.div`
@@ -50,6 +70,11 @@ export const PostItemInfo = styled.div`
   ${media.greaterThan('medium')`
     margin-left:${setPxToRem(24)};
   `}
+  body#grid & {
+    ${setFlex({flDir:'column',y:'center'})};
+    margin:0;
+    text-align:center;
+  }
 `
 
 export const PostItemDate = styled.time`
@@ -65,6 +90,11 @@ export const PostItemTitle = styled.h1`
   ${media.greaterThan('medium')`
     font-size:${setPxToRem(26)};
   `}
+
+  body#grid & {
+    line-height:1.1;
+    margin: ${setPxToRem(8)} 0;
+  }
 `
 
 export const PostItemDescription = styled.p`

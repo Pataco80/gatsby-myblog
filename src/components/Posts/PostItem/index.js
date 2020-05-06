@@ -8,19 +8,20 @@ import PropTypes from 'prop-types'
 import * as S from './styled'
 
 // Component
-const PostItem = ({ slug, category, background, date, timeRead, title, description }) => (
+const PostItem = ({ slug, category, background, date, timeToRead, title, description }) => (
 
   // Render Component
   <S.PostItemWrapper>
-    <S.PostItemItem to={slug}>
+<S.PostItemItem to={slug}>
       <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
-        <S.PostItemDate>Posté le date : {date} - Temps de lecture : {timeRead}</S.PostItemDate>
+        <S.PostItemDate>Posté le date : {date} - Temps de lecture : {timeToRead} min.</S.PostItemDate>
         <S.PostItemTitle>{title}</S.PostItemTitle>
         <S.PostItemDescription>{description}</S.PostItemDescription>
       </S.PostItemInfo>
     </S.PostItemItem>
   </S.PostItemWrapper>
+    
 
 )
 
