@@ -11,13 +11,19 @@ ${setFlex};
 export const MainWrapper = styled.main`
   color: var(--texts);
   min-height:100vh;
-  padding:${setPxToRem(55)} ${setPxToRem(0)} ${setPxToRem(47)} ${setPxToRem(0)};
+  padding:${setPxToRem(59)} ${setPxToRem(0)} ${setPxToRem(47)} ${setPxToRem(0)};
   width:${setPerCent()};
 
   ${media.greaterThan('medium')`
-    padding:${setPxToRem(0)} ${setPxToRem(51)} ${setPxToRem(0)} ${setPxToRem(190)};
+    padding:${setPxToRem(0)} ${setPxToRem(51)} ${setPxToRem(0)} ${setPxToRem(189)};
   `}
   ${media.greaterThan('large')`
-    padding:${setPxToRem(0)} ${setPxToRem(57)} ${setPxToRem(0)} ${setPxToRem(261)};
+    padding:${setPxToRem(0)} ${setPxToRem(57)} ${setPxToRem(0)} ${setPxToRem(259)};
   `}
+  
+  body#grid & {
+    grid-template-areas:
+    "posts"
+    "pagination";
+  }
 `

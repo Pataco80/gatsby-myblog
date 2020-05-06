@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import Components for App
-import PostItem from '../../Home/PostItem'
+import PostItem from '../../Posts/PostItem'
 
 // Passer en props l'objet "hitComponent" appelé "hit" dans les composants React des outils de dev du navigateur.
 // Component

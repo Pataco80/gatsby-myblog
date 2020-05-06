@@ -33,9 +33,8 @@ export const ProfileAuthor = styled.h1`
 
   ${media.greaterThan('medium')`
   text-align:center;
-  font-size:${setPxToRem(20)};
+  font-size:${setPxToRem(26)};
   margin:${setPxToRem(8)} auto ${setPxToRem(24)};
-  line-height:1.75;
 
     span {
       display:block;
@@ -46,8 +45,10 @@ export const ProfileAuthor = styled.h1`
     }
   `}
 
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('large')`
   font-size:${setPxToRem(26)};
+    line-height:1.75;
+
   margin:${setPxToRem(8)} auto ${setPxToRem(24)};
   `}
 `
@@ -56,6 +57,10 @@ export const ProfileMyJob = styled.small`
   display:block;
   font-size:${setPxToRem(18)};
   font-weight:300;
+  ${media.greaterThan('medium')`
+    margin-top:${setPxToRem(16)};
+
+  `}
 `
 
 export const ProfileDescription = styled.p`

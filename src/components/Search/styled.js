@@ -75,4 +75,15 @@ export const SearchWrapper = styled.section`
     padding:0;
     list-style:none;
   }
+  body#grid & {
+    .ais-Hits-list{
+display:grid;
+  grid-area:posts;
+  grid-gap:${setPxToRem(1)};
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  background-color:var(--borders);
+  ${setBorder({size:`${setPxToRem(1)}`, type:'solid', color:`var(--borders)`})};
+    }
+  
+}
 `

@@ -41,8 +41,9 @@ const Profile = () => {
       <Avatar/>
       <S.ProfileLink>
         <S.ProfileAuthor>
-          <span>{firstName} </span> 
-          <span>{lastName} </span> 
+          <span>{firstName}</span>
+          {' '}
+          <span>{lastName}</span> 
           <S.ProfileMyJob>{myJob}</S.ProfileMyJob>
         </S.ProfileAuthor> 
       </S.ProfileLink>

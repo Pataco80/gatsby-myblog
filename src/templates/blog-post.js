@@ -6,8 +6,8 @@ import { graphql } from 'gatsby'
 // Import Components for App
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
-import PaginationPost from '../components/PaginationPost'
-import PostComments from '../components/PostComments'
+import PaginationPost from '../components/Posts/PaginationPost'
+import PostComments from '../components/Posts/PostComments'
 
 // Styles from styled-components
 import * as S from './styles/blog-post-styled'

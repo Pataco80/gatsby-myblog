@@ -1,36 +1,79 @@
 import styled from 'styled-components'
 import { setPxToRem, setTransition, setLetterSpacing, setBorder, layout } from '../../styles/helpers'
+import media from 'styled-media-query'
 
 export const PostHeader = styled.header`
   ${layout(1120)}
   color: var(--postColor);
   margin: auto;
-  padding:  ${setPxToRem(80)} ${setPxToRem(80)} 0;
+  padding:  ${setPxToRem(24)} ${setPxToRem(16)} 0;
+
+  ${media.greaterThan('medium')`
+    padding:  ${setPxToRem(32)} ${setPxToRem(32)} 0;
+  `}
+
+  ${media.greaterThan('large')`
+    padding: ${setPxToRem(80)} ${setPxToRem(80)} 0;
+  `}
 `
 
 export const PostTitle = styled.h1`
-  font-size: ${setPxToRem(64)};
+  font-size: ${setPxToRem(36)};
   font-weight: 700;
-  padding: 0 ${setPxToRem(22)};
+  padding: 0 ${setPxToRem(16)};
   margin: ${setPxToRem(16)} auto;
+
+  ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(42)};
+    padding: 0 ${setPxToRem(18)};
+  `}
+
+  ${media.greaterThan('large')`
+    font-size: ${setPxToRem(64)};
+    padding: 0 ${setPxToRem(22)};
+  `}
 `
 
 export const PostDescription = styled.h2`
-  font-size: ${setPxToRem(32)};
+  font-size: ${setPxToRem(24)};
   font-weight: 200;
-  padding: 0 ${setPxToRem(22)};
+  padding: 0 ${setPxToRem(16)};
+
+  ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(28)};
+    padding: 0 ${setPxToRem(18)};
+  `}
+
+  ${media.greaterThan('large')`
+    font-size: ${setPxToRem(32)};
+    padding: 0 ${setPxToRem(18)};
+  `}
 `
 
 export const PostDate = styled.p`
-  font-size: ${setPxToRem(17)};
+  font-size: ${setPxToRem(14)};
   font-weight: 100;
-  padding: 0 ${setPxToRem(22)};
+  padding: 0 ${setPxToRem(16)};
+
+  ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(17)};
+    font-weight: 100;
+    padding: 0 ${setPxToRem(22)};
+  `}
 `
 
 export const MainContent = styled.section`
   ${layout(1120)}
   margin: auto;
-  padding: ${setPxToRem(32)} ${setPxToRem(80)};
+  padding:  ${setPxToRem(24)} ${setPxToRem(16)} 0;
+
+  ${media.greaterThan('medium')`
+    padding:  ${setPxToRem(32)} ${setPxToRem(32)} 0;
+  `}
+
+  ${media.greaterThan('large')`
+    padding: ${setPxToRem(80)} ${setPxToRem(80)} 0;
+  `}
 
   p,
   h1,
@@ -47,7 +90,11 @@ export const MainContent = styled.section`
     font-weight: 300;
     line-height: 1.7;
     ${setLetterSpacing(1)};
-    padding: 0 ${setPxToRem(22)};
+    padding: 0 ${setPxToRem(16)};
+
+    ${media.greaterThan('medium')`
+    padding:  0 ${setPxToRem(22)};
+  `}
   }
 
   p {
@@ -71,6 +118,7 @@ export const MainContent = styled.section`
 
   li {
     padding: ${setPxToRem(10)} 0;
+    line-height:1.2;
 
     & > ul {
       margin-bottom: 0;
@@ -98,8 +146,15 @@ export const MainContent = styled.section`
   blockquote {
     color: var(--postColor);
     border-left: ${setBorder({size:5, type:'solid', color: 'var(--highlight)'})};
-    padding: 0 ${setPxToRem(30)};
-    margin: ${setPxToRem(50)} auto;
+    padding: 0;
+    margin: ${setPxToRem(50)} auto ${setPxToRem(50)} ${setPxToRem(16)};
+
+    ${media.greaterThan('medium')`
+      padding:  0 ${setPxToRem(12)};
+    `}
+    ${media.greaterThan('large')`
+      padding:  0 ${setPxToRem(16)};
+    `}
   }
 
   hr {
@@ -124,23 +179,53 @@ export const MainContent = styled.section`
   }
 
   h1 {
-    font-size: ${setPxToRem(45)};
+    font-size: ${setPxToRem(32)};
+    ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(36)};
+    `}
+    ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(42)};
+    `}
   }
 
   h2 {
-    font-size: ${setPxToRem(34)};
+    font-size: ${setPxToRem(28)};
+    ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(32)};
+    `}
+    ${media.greaterThan('medium')`
+    font-size: ${setPxToRem(36)};
+    `}
   }
 
   h3 {
-    font-size: ${setPxToRem(26)};
+    font-size: ${setPxToRem(24)};
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(28)};
+    `}
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(32)};
+    `}
   }
 
   h4 {
     font-size: ${setPxToRem(22)};
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(26)};
+    `}
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(30)};
+    `}
   }
 
   h5 {
-    font-size: ${setPxToRem(19)};
+    font-size: ${setPxToRem(28)};
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(22)};
+    `}
+    ${media.greaterThan('medium')`
+      font-size: ${setPxToRem(26)};
+    `}
   }
 
   strong {

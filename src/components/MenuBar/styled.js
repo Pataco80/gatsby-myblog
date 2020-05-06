@@ -13,7 +13,7 @@ export const MenuBarWrapper = styled.section`
   width:100%;
   height:auto;
   background-color:var(--mediumBackground);
-  border-top:${setBorder({size:1})};
+  border-top:${setBorder({size:2})};
   padding: 0 ${setPxToRem(16)};
   
   ${media.greaterThan('medium')`
@@ -23,7 +23,7 @@ export const MenuBarWrapper = styled.section`
     height:100vh;
     width:auto;
     background-color:var(--mediumBackground);
-    border-left:${setBorder({size:1})};
+    border-left:${setBorder({size:2})};
     padding: ${setPxToRem(16)} ${setPxToRem(4)};
   `}
 `

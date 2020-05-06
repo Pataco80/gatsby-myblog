@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { setFlex, setPxToRem } from '../../styles/helpers'
+import { setFlex, setPxToRem, setBorder } from '../../styles/helpers'
 import media from 'styled-media-query'
 
 // Import Components for App
@@ -9,6 +9,15 @@ import { Link } from 'gatsby'
 export const PaginationWrapper = styled.div`
   ${setFlex({x:'space-around', y:'center'})};
   color:var(--texts);
+  height:${setPxToRem(48)};
+
+  ${media.greaterThan('medium')`
+    height:${setPxToRem(64)};
+  `}
+
+  body#grid & {
+    border-top:${setBorder({size:1, type:'solid',color:`var(--borders)`})};
+  }
 `
 export const PaginationLink = styled(Link)`
   ${setFlex({y:'center'})};
@@ -19,10 +28,6 @@ export const PaginationLink = styled(Link)`
   &:hover {
     color:var(--highlight);
   }
-
-  ${media.greaterThan('medium')`
-
-  `}
 
 `
 

@@ -5,11 +5,11 @@ import { graphql} from 'gatsby'
 // Import Components for App
 import Layout from '../components/Global/Layout'
 import SEO from '../components/Global/seo'
-import PostItem from '../components/Home/PostItem'
+import PostItem from '../components/Posts/PostItem'
 import Pagination from '../components/Pagination'
 
 // Import Styles  
-
+import * as S from '../components/Posts/styled'
 // GraphQl Queries
 
 // Dans cette requête nous passons en paramêtre 2 variables, "${limit} et ${skip}" sous forme de nombre entiers "Int!". La valeur provient du context généré par la création de la page dans gatsby-node". Attention ne pas mêttre de nom racourcis devant "allMarkdownRemark".
@@ -55,11 +55,14 @@ const BlogListTemplate = (props) => {
   return (
    <Layout>
       <SEO title='Home' />
-      {
+      <S.PostItemsLayout>
+{
         postsList.map(({node:{frontmatter:{date, title, description, category, background},timeToRead,fields:{slug}}}) => {
           return <PostItem slug={slug}  date={date} title={title} description={description} category={category} background={background} timeToRead={timeToRead}/>
         })
       }
+      </S.PostItemsLayout>
+      
 
       <Pagination currentPage={currentPage} numPages={numPages} prevPage={prevPage} nextPage={nextPage} isFirst={isFirst} isLast={isLast} />
     </Layout>
