@@ -1,5 +1,4 @@
 // essayez de trouver un identifiant unique pour chaque nœud si ce champ est absent, il sera inséré automatiquement par Algolia et sera moins simple à mettre à jour etc. Pour faciliter, passez l'id du post par l'"objectID" pour Algolia. ainsi l'ID de chaque post sera transmis via "objectID".
-
 require('dotenv').config()
 
 const getPosts = `{
