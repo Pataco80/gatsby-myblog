@@ -58,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
               description
               category
               background
-              featured
+              featuredImage
             }
             timeToRead
           }

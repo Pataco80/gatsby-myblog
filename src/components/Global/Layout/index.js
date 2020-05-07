@@ -19,7 +19,7 @@ import GlobalStyle from '../../../styles/globalStyles'
 import * as S from './styled'
 
 // Component
-const Layout = ({ className, children }) => {
+const Layout = ({ children }) => {
 
   // Render Component
   return (

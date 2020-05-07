@@ -28,7 +28,7 @@ import * as S from './styles/blog-post-styled'
           date(formatString: "dddd, DD MMM YYYY", locale: "fr")
           category
           background
-          featured
+          featuredImage
           keywords
         }
         timeToRead
@@ -47,7 +47,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   // Render Component
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.frontmatter.description} image={post.frontmatter.featured} keywords={post.frontmatter.keywords}/>
+      <SEO title={post.frontmatter.title} description={post.frontmatter.description} featuredImage={post.frontmatter.featuredImage} keywords={post.frontmatter.keywords}/>
       <S.PostHeader>
         <S.PostDate>{post.frontmatter.date} - {post.timeToRead} {`min. de lecture`}</S.PostDate>
         <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
