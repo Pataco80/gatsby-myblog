@@ -24,7 +24,7 @@ module.exports = {
       lastName: `Do Vale`,
       twitterUsername: `Pataco80`
     },
-    siteUrl: 'http://mysite.netlify.com',
+    siteUrl: 'https://gatsby-myblog.netlify.app',
   },
   plugins: [
     `gatsby-plugin-styled-components`,

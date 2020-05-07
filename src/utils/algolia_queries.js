@@ -37,7 +37,7 @@ const queries = [
   {
     query: getPosts,
     transformer: ({ data }) => flatten(data.posts.edges),
-    indexName: 'Posts', // overrides main index name, optional
+    indexName: 'envDevPosts', // overrides main index name, optional
     settings,
   },
 ];
