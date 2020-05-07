@@ -1,5 +1,7 @@
 // essayez de trouver un identifiant unique pour chaque nœud si ce champ est absent, il sera inséré automatiquement par Algolia et sera moins simple à mettre à jour etc. Pour faciliter, passez l'id du post par l'"objectID" pour Algolia. ainsi l'ID de chaque post sera transmis via "objectID".
 
+require('dotenv').config()
+
 const getPosts = `{
     posts: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
       edges {
@@ -37,7 +39,7 @@ const queries = [
   {
     query: getPosts,
     transformer: ({ data }) => flatten(data.posts.edges),
-    indexName: 'envDevPosts', // overrides main index name, optional
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // overrides main index name, optional
     settings,
   },
 ];
