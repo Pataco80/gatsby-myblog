@@ -4,7 +4,7 @@ title: Waiting to die
 description: So say goodbye to love and hold your head up high
 category: svg
 background: "#7d669e"
-featured: "/assets/img/Waiting-to-die.jpg"
+featuredImage: "/assets/img/Waiting-to-die.jpg"
 keywords: coucou salut bonjour
 ---
 

@@ -4,7 +4,7 @@ title: Imperfection is beauty, madness is genius
 description: And it's better to be absolutely ridiculous than absolutely boring
 category: css
 background: "#24809e"
-featured: "/assets/img/Imperfection-is-beauty.jpg"
+featuredImage: "/assets/img/Imperfection-is-beauty.jpg"
 ---
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [bibendum](http://google.com) eu pulvinar vel, sodales vitae dui.
