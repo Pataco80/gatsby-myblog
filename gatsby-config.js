@@ -18,11 +18,13 @@ module.exports = {
     title: `Ricardo Do Vale`,
     myJob:`Developpeur Jamstack`,
     description: `Créateur de sites web avec React et Gatsby.`,
+    keywords: `React Blog Gatsby PWA`,
     author: {
       firstName: `Ricardo`,
       lastName: `Do Vale`,
       twitterUsername: `Pataco80`
     },
+    siteUrl: 'http://mysite.netlify.com',
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -76,6 +78,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-algolia-search`,
       options: {
