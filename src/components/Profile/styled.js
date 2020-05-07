@@ -3,7 +3,7 @@ import { setTransition, setFlex, setPxToRem } from '../../styles/helpers'
 import media from 'styled-media-query'
 
 // Import Components for App
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Styles exports
 export const ProfileWrapper = styled.section`
@@ -15,7 +15,7 @@ export const ProfileWrapper = styled.section`
   `}
 `
 
-export const ProfileLink = styled(Link)`
+export const ProfileLink = styled(AniLink)`
   color:var(--texts);
   text-decoration:none;
   ${setTransition()};

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import media from 'styled-media-query'
 import { setPxToRem } from '../../styles/helpers'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const MenuLinksrWrapper = styled.div`
 `
@@ -19,7 +18,7 @@ export const MenuLinksItem = styled.li`
   }
 
 `
-export const MenuLinkLink = styled(Link)`
+export const MenuLinkLink = styled(AniLink)`
   color:var(--texts);
   text-decoration:none;
 

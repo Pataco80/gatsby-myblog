@@ -7,6 +7,7 @@ import { RightArrowCircle as Right } from '@styled-icons/boxicons-regular/RightA
 
 
 // Import Styles
+import getThemeColor from '../../utils/getThemeColor'
 import * as S from './styled'
 
 // Component
@@ -16,7 +17,7 @@ const Pagination = ({ currentPage, numPages, prevPage, nextPage, isFirst, isLast
   // Render Component
   <S.PaginationWrapper>
     {!isFirst && 
-      <S.PaginationLink to={prevPage}>
+      <S.PaginationLink to={prevPage} cover direction='left' duration={0.6} bg={getThemeColor()}>
         <S.PaginationLinkIcon>
           <Left />
         </S.PaginationLinkIcon>
@@ -25,7 +26,7 @@ const Pagination = ({ currentPage, numPages, prevPage, nextPage, isFirst, isLast
     }
     {currentPage} sur {numPages}
     {!isLast && 
-      <S.PaginationLink to={nextPage}>
+      <S.PaginationLink to={nextPage} cover direction='right' duration={0.6} bg={getThemeColor()}>
         Page Suivante
         <S.PaginationLinkIcon>
           <Right />

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 
 // Import Styles
+import getThemeColor from '../../../utils/getThemeColor'
 import * as S from './styled'
 
 // Component
@@ -12,7 +13,7 @@ const PostItem = ({ slug, category, background, date, timeToRead, title, descrip
 
   // Render Component
   <S.PostItemWrapper>
-<S.PostItemItem to={slug}>
+<S.PostItemItem to={slug} cover direction='right' duration={0.6} bg={getThemeColor()}>
       <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
         <S.PostItemDate>Posté le date : {date} - Temps de lecture : {timeToRead} min.</S.PostItemDate>

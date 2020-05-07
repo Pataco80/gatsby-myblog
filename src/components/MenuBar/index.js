@@ -11,6 +11,7 @@ import { List } from '@styled-icons/evaicons-solid/List'
 
 // Import Styles
 import * as S from './styled'
+import getThemeColor from '../../utils/getThemeColor'
 
 // Component
 const MenuBar = () => {
@@ -36,12 +37,12 @@ const MenuBar = () => {
   return(
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-        <S.MenuBarLink to='/' title="Aller à la page d'Acceuil">
+        <S.MenuBarLink to='/' title="Aller à la page d'Acceuil" cover direction='right' duration={0.6} bg={getThemeColor()}>
           <S.MenuBarItem>
             <Home/>
           </S.MenuBarItem>
         </S.MenuBarLink>
-        <S.MenuBarLink to='/search/' title='Rechercher'>
+        <S.MenuBarLink to='/search/' title='Rechercher' cover direction='right' duration={0.6} bg={getThemeColor()}>
           <S.MenuBarItem>
             <Search/>
           </S.MenuBarItem>

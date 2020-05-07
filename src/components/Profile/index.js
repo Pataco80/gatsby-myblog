@@ -9,6 +9,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Avatar from '../Avatar'
 
 // Styles from styled-components
+import getThemeColor from '../../utils/getThemeColor'
 import * as S from './styled'
 
 // Component
@@ -32,14 +33,14 @@ const Profile = () => {
     }
   `
   const siteData = useStaticQuery(getSiteData)
-  const {title,myJob,description} = siteData.site.siteMetadata
-  const {firstName,lastName,twitterUsername} = siteData.site.siteMetadata.author
+  const {myJob,description} = siteData.site.siteMetadata
+  const {firstName,lastName} = siteData.site.siteMetadata.author
 
   // Render Component
   return(
     <S.ProfileWrapper>
       <Avatar/>
-      <S.ProfileLink>
+      <S.ProfileLink to='/' cover direction='left' duration={0.6} bg={getThemeColor()}>
         <S.ProfileAuthor>
           <span>{firstName}</span>
           {' '}

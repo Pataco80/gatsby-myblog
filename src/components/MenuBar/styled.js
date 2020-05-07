@@ -3,7 +3,7 @@ import { setFlex, setBorder, setPxToRem } from '../../styles/helpers'
 import media from 'styled-media-query'
 
 // Import Components for App
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Component Styles
 export const MenuBarWrapper = styled.section`
@@ -36,7 +36,7 @@ export const MenuBarGroup = styled.div`
   `}
 `
 
-export const MenuBarLink = styled(Link)`
+export const MenuBarLink = styled(AniLink)`
 ${setFlex()};
 width:${setPxToRem(38)};
 margin: 0 ${setPxToRem(4)} 0 0;

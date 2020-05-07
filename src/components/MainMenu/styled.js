@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { setFlex, setPxToRem } from '../../styles/helpers'
+import { setFlex } from '../../styles/helpers'
 import media from 'styled-media-query'
 
 export const MainMenuWrapper = styled.nav`

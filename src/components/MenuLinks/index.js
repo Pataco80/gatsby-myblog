@@ -4,6 +4,7 @@ import React from 'react'
 import links from './pathLinks'
 
 // Import Styles
+import getThemeColor from '../../utils/getThemeColor'
 import * as S from './styled'
 
 // Component
@@ -17,7 +18,7 @@ const MenuLinks = () => (
         // Return Links
         return(
           <S.MenuLinksItem Key={i}>
-            <S.MenuLinkLink to={link.url} title={link.label} activeClassName='active'>
+            <S.MenuLinkLink to={link.url} title={link.label} activeClassName='active' cover direction='left' duration={0.6} bg={getThemeColor()}>
               {link.label}
             </S.MenuLinkLink>
           </S.MenuLinksItem>

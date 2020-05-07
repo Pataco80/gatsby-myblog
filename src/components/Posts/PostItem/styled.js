@@ -3,7 +3,7 @@ import { setPxToRem, setFlex, setBorder } from '../../../styles/helpers'
 import media from 'styled-media-query'
 
 // Import Components for App
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Component Styles
 export const PostItemWrapper = styled.article`
@@ -16,7 +16,7 @@ export const PostItemWrapper = styled.article`
   }
 `
 
-export const PostItemItem = styled(Link)`
+export const PostItemItem = styled(AniLink)`
   ${setFlex({y:'center'})};
   color:var(--texts);
   text-decoration:none;

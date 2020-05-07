@@ -3,7 +3,7 @@ import { setFlex, setPxToRem, setBorder, setTransition } from '../../../styles/h
 import media from 'styled-media-query'
 
 // Import Components for App
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Component Styles
 export const PaginationPostWrapper = styled.section`
@@ -19,7 +19,7 @@ export const PaginationPostWrapper = styled.section`
 
 `
 
-export const PaginationPostLink = styled(Link)`
+export const PaginationPostLink = styled(AniLink)`
   background: var(--mediumBackground);
   color: var(--highlight);
   ${setFlex({y:'center'})};

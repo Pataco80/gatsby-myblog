@@ -2,7 +2,7 @@ import React from 'react'
 
 
 // Import components from Gatsby and plugins Gatsby
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Import Components for App
 import Layout from '../components/Global/Layout'
@@ -16,8 +16,8 @@ const AboutPage = () => (
   <Layout>
     <SEO title='About' />
         <h1>About Page</h1>
-        <Link to='/'  title='Home Page'>Index Page</Link>
-        <Link to='/about/' activeStyle={{color:'red'}} title='About Page'>About Page</Link>
+        <AniLink to='/'  title='Home Page'>Index Page</AniLink>
+        <AniLink to='/about/' activeStyle={{color:'red'}} title='About Page'>About Page</AniLink>
   </Layout>
 )
 

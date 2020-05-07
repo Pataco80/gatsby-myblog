@@ -3,7 +3,7 @@ import { setFlex, setPxToRem, setBorder } from '../../styles/helpers'
 import media from 'styled-media-query'
 
 // Import Components for App
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Component Styles
 export const PaginationWrapper = styled.div`
@@ -19,7 +19,7 @@ export const PaginationWrapper = styled.div`
     border-top:${setBorder({size:1, type:'solid',color:`var(--borders)`})};
   }
 `
-export const PaginationLink = styled(Link)`
+export const PaginationLink = styled(AniLink)`
   ${setFlex({y:'center'})};
   height:${setPxToRem(38)};
   color:var(--texts);
