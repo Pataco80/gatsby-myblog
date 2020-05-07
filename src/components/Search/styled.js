@@ -80,6 +80,7 @@ export const SearchWrapper = styled.section`
 display:grid;
   grid-area:posts;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-gap:inherit;
   background-color:var(--borders);
   ${setBorder({size:`${setPxToRem(1)}`, type:'solid', color:`var(--borders)`})};
     }
