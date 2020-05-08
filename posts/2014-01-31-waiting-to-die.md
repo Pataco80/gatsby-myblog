@@ -1,5 +1,5 @@
 ---
-title: Waiting to die
+title: Waiting to die ho lala
 description: So say goodbye to love and hold your head up high
 date: 2014-01-31T05:54:23.000Z
 category: svg
