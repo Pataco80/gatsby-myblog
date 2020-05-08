@@ -22,5 +22,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Date", name: "date", widget: "date", format: "DD MMM YYYY"}
+      - {label: "Category", name: "category", widget: "select",
+        option:["CSS", "JavaScript", ""]
+        }
       - {label: "Featured Image", name: "featuredImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
