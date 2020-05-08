@@ -81,7 +81,7 @@ display:grid;
   grid-area:posts;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   grid-gap:inherit !important;
-  background-color:var(--borders);
+  background-color:var(--background);
   ${setBorder({size:`${setPxToRem(1)}`, type:'solid', color:`var(--borders)`})};
     }
   

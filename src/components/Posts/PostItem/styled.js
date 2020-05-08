@@ -11,6 +11,7 @@ export const PostItemWrapper = styled.article`
 
   body#grid & {
     ${setFlex({flDir:'column',y:'stretch'})};
+    height:100%;
     background:var(--background);
     border:${setBorder({size:1})};
   }

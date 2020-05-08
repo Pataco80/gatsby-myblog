@@ -7,7 +7,7 @@ body#grid & {
   display:grid;
   grid-area:posts;
   grid-template-columns: repeat(auto-fit, minmax(${setPxToRem(300)}, 1fr));
-  background-color:var(--backgrounde);
+  background-color:var(--background);
 
   ${media.greaterThan('medium')`
     grid-template-columns: repeat(auto-fit, minmax(${setPxToRem(260)}, 1fr));
