@@ -22,8 +22,23 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Date", name: "date", widget: "date", format: "DD MMM YYYY"}
-      - {label: "Category", name: "category", widget: "select",
-        option:["CSS", "JavaScript", ""]
-        }
+      - {
+        label: "Category",
+        name: "category",
+        widget: "select",
+        options: ["jekyll", "css", "js", "html", "svg", "dev", "misc"]
+      }
+      - {
+        label: "Background", name: "background", widget: "select", 
+        options: [
+          {label: "Jekyll", value: "#B31917"},
+          {label: "css", value: "#2DA0C3"},
+          {label: "js", value: "#D6BA32"},
+          {label: "html", value: "#EB7728"},
+          {label: "svg", value: "#7D669E"},
+          {label: "dev", value: "#637a91"},
+          {label: "misc", value: "#7AAB13"}
+        ]
+      }
       - {label: "Featured Image", name: "featuredImage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
