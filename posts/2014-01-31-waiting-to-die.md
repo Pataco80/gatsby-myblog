@@ -1,10 +1,10 @@
 ---
-date: 2014-01-31 05:54:23
 title: Waiting to die
 description: So say goodbye to love and hold your head up high
+date: 2014-01-31T05:54:23.000Z
 category: svg
-background: "#7d669e"
-featuredImage: "/assets/img/Waiting-to-die.jpg"
+background: "#7D669E"
+featuredImage: /assets/img/Waiting-to-die.jpg
 keywords: coucou salut bonjour
 ---
 
