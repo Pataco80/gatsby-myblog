@@ -11,9 +11,9 @@ import * as S from './styled'
 // Import variables custom from .env file
 // Importation des clés en veillant à les préfixer avec "GATSBY_" dans le fichier .env pour pouvoir les exporter. L'importation de cette façon, évite de pousser des valeurs réelles sur le répository
 const algolia = {
-  appId: process.env.GATSBY_ALGOLIA_APP_ID,
-  algoliaSearchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_API_KEY,
-  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+  appId: process.env.ALGOLIA_APP_ID,
+  algoliaSearchOnlyApiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+  indexName: process.env.ALGOLIA_INDEX_NAME,
 }
 
 // Import variables from Algolia functional component
