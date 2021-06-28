@@ -15,7 +15,6 @@ const getPosts = `{
             title
             description
             category
-            background
           }
           excerpt(pruneLength: 5000)
         }

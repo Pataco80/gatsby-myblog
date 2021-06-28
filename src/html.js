@@ -15,8 +15,8 @@ export default function HTML(props) {
       </head>
       <body {...props.bodyAttributes} className="dark">
         <script
-            dangerouslySetInnerHTML={{
-              __html: `
+          dangerouslySetInnerHTML={{
+            __html: `
               (function() {
                 window.__onThemeChange = function() {};
                 function setTheme(newTheme) {
@@ -65,13 +65,16 @@ export default function HTML(props) {
                 setDisplay(preferredDisplay || (displayQuery.matches ? 'grid' : 'list'));
               })();
             
-`
-            }}
-          />
+`,
+          }}
+        />
         {props.preBodyComponents}
-        <noscript key="noscript" id="gatsby-noscript">
+        {/* 
+        
+                <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
-        </noscript>
+        </noscript>*/}
+
         <div
           key={`body`}
           id="___gatsby"
