@@ -8,23 +8,23 @@ Vous pouvez avoir plusieurs environements tels que develop, proeuction ou test p
 */
 
 // Dans le cas de non variables d'environnement, écrivez le code ci-dessous.
-require('dotenv').config()
+require("dotenv").config()
 
-const queries = require('./src/utils/algolia_queries')
+const queries = require("./src/utils/algolia_queries")
 
 // Configuration de Gatsby et des modules plugins de Gatsby
 module.exports = {
   siteMetadata: {
     title: `Ricardo Do Vale`,
-    myJob:`Developpeur Jamstack`,
+    myJob: `Developpeur Jamstack`,
     description: `Créateur de sites web avec React et Gatsby.`,
     keywords: `React Blog Gatsby PWA`,
     author: {
       firstName: `Ricardo`,
       lastName: `Do Vale`,
-      twitterUsername: `Pataco80`
+      twitterUsername: `Pataco80`,
     },
-    siteUrl: 'https://gatsby-myblog.netlify.app',
+    siteUrl: "https://gatsby-myblog.netlify.app",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -59,20 +59,20 @@ module.exports = {
           {
             resolve: "gatsby-remark-relative-images",
             options: {
-              name: "uploads"
-            }
+              name: "uploads",
+            },
           },
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 960,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
             },
           },
           `gatsby-remark-lazy-load`,
 
           // Attention ce plugin doit être placer en dernier dans "gatsby-transformer-remark"
-          `gatsby-remark-prismjs`
+          `gatsby-remark-prismjs`,
         ],
       },
     },
@@ -83,9 +83,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia-search`,
       options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
         queries,
         chunkSize: 10000, // default: 1000
         enablePartialUpdates: true, // default: false
